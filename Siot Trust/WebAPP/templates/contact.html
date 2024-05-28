@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="static/images/fevicon.png" type="image/x-icon">
+  <title>Siot Trust</title>
+
+  <!-- bootstrap core css -->
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.css')}}"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link rel="stylesheet" href="{{url_for('static',filename='css/font-awesome.min.css')}}" />
+
+
+  <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"  />
+
+  <link rel="stylesheet" href="{{url_for('static',filename='css/responsive.css')}}"  />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <div class="hero_bg_box">
+      <img src="static/images/a3.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand " href="index.html"> Siot Trust </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{ url_for('main')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('about')}}"> About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('contact')}}">Prediction</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('home')}}">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span>
+                      Login
+                    </span>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- contact section -->
+  <section class="contact_section ">
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box ">
+            <img src="static/images/a3.jpg" class="box_img" alt="about img">
+          </div>
+        </div>
+        <div class="col-md-5 mx-auto">
+          <div class="form_container">
+            <div class="heading_container heading_center">
+              <h2>Prediction</h2>
+            </div>
+            <form id="appointment-form" role="form" method="post" action="{{ url_for('analyze')}}">
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="number" class="form-control" placeholder="Time" name="time" required/>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <input type="text" class="form-control" placeholder="Trustor" name="Trustor" required/>
+                </div>
+                <div class="form-group col-lg-6">
+                  <input type="number" class="form-control" placeholder="Trustee" name="Trustee" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <input type="number" class="form-control" placeholder="Number of packets forwarded" name="pkf" required />
+                </div>
+                <div class="form-group col-lg-6">
+                  <input type="number" class="form-control" placeholder="Number of packets dropped"  name="pkd" required/>
+                </div>
+              </div>
+
+
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <input type="number" class="form-control" placeholder="Packet Delivery Ratio" name="pdr" required/>
+                </div>
+                <div class="form-group col-lg-6">
+                  <input type="number" class="form-control" placeholder="Friendliness factor" name="frnd" required/>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <input type="number" class="form-control" placeholder="Circle of Influence" name="coi" required/>
+                </div>
+                <div class="form-group col-lg-6">
+                  <input type="number" class="form-control" placeholder="Device ID" name="did" required/>
+                </div>
+              </div>
+
+
+          
+              <div class="form-row">
+                  <div class="form-group col">
+                    <select name="dtype" id="" class="form-control wide" required>
+                      <option value="-1">Device type</option>
+                      <option value="0">Smartphone</option>
+                      <option value="1">Smartwatch</option>
+                      <option value="2">Smart Speaker</option>
+                      <option value="3">Smart Thermostat</option>
+                      <option value="4">SSmart Bulb</option>
+                      <option value="5">Smart Lock</option>
+                      <option value="6">SSmart TV </option>
+                      <option value="7">Smart Camera</option>
+                      <option value="8">Smart Refrigerator</option>
+                      <option value="9">Smart Plug</option>
+                    </select>
+                  </div>
+              </div>
+
+
+              <div class="form-row">
+                <div class="form-group col">
+                  <select name="dbrand" id="" class="form-control wide" required>
+                    <option value="-1">Device Brand</option>
+                    <option value="0">Samsung</option>
+                    <option value="1">Apple</option>
+                    <option value="2">Amazon</option>
+                    <option value="3">Nest</option>
+                    <option value="4">Philips</option>
+                    <option value="5">Yale</option>
+                    <option value="6">Sony </option>
+                    <option value="7">Arlo</option>
+                    <option value="8">TP-Link</option>
+               
+                  </select>
+                </div>
+            </div>
+                
+
+            <div class="form-row">
+              <div class="form-group col">
+                <select name="dmodel" id="" class="form-control wide" required>
+                  <option value="-1">Device Model</option>
+                  <option value="0">iPhone 12</option>
+                  <option value="1">Galaxy Watch</option>
+                  <option value="2">Echo Dot</option>
+                  <option value="3">Learning Thermostat </option>
+                  <option value="4">Hue White & Color Ambiance</option>
+                  <option value="5">Assure Lock SL</option>
+                  <option value="6">Bravia X900H  </option>
+                  <option value="7">Pro 3 </option>
+                  <option value="8">RF28R7351SG </option> 
+                  <option value="9">Kasa Smart Plug  </option>
+                </select>
+              </div>
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group col">
+              <select name="drtype" id="" class="form-control wide" required>
+                <option value="-1">Device Relationship_Type</option>
+                <option value="0">Home Automation</option>
+                <option value="1">Personal </option>
+                <option value="2">Entertainment</option>
+                <option value="3">Security</option>
+                <option value="4">Fridge</option>
+
+              </select>
+            </div>
+        </div>
+              
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="text" class="form-control" placeholder="D_Relationship_Factor" name="drf" required/>
+                </div>
+              </div>
+              
+              <div class="btn_box">
+                <button>
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <h3>Prediction Result: {{class1}}</h3>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+
+
+  <script src="{{url_for('static',filename='js/jquery-3.4.1.min.js')}}"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="{{url_for('static',filename='js/bootstrap.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+  <script src="{{url_for('static',filename='js/custom.js')}}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- End Google Map -->
+</body>
+
+</html>
